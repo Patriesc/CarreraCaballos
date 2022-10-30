@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CarreraCaballosApplication {
 
 	public static void main(String[] args) {
-		FrmCarrera.lanzador(args);
+		FrmCarrera.lanzador();
 	}
 
 }

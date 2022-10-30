@@ -1,13 +1,12 @@
 package com.carrera.carreraCaballos.modelos;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.Observable;
 import java.util.Observer;
 
 public class FrmCarrera extends javax.swing.JFrame implements Observer {
 
-    private Thread[] hilos;
+    private final Thread[] hilos;
     // Inicializamos por defecto a 8, en caso de que el usuario no introduzca ningún número
     private int numHilos = 8;
 
@@ -25,27 +24,7 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pg1 = new javax.swing.JProgressBar();
-        jLabel1 = new javax.swing.JLabel();
-        pg2 = new javax.swing.JProgressBar();
-        jLabel2 = new javax.swing.JLabel();
-        pg3 = new javax.swing.JProgressBar();
-        jLabel3 = new javax.swing.JLabel();
-        pg4 = new javax.swing.JProgressBar();
-        jLabel4 = new javax.swing.JLabel();
-        btnIniciar = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        pg5 = new javax.swing.JProgressBar();
-        jLabel6 = new javax.swing.JLabel();
-        pg6 = new javax.swing.JProgressBar();
-        jLabel7 = new javax.swing.JLabel();
-        pg7 = new javax.swing.JProgressBar();
-        jLabel8 = new javax.swing.JLabel();
-        pg8 = new javax.swing.JProgressBar();
-        lblGanador = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        numLabel = new javax.swing.JLabel();
+
         SpinnerNumberModel model1 = new SpinnerNumberModel(1, 1, 8, 1);
         spinner1 = new javax.swing.JSpinner(model1);
 
@@ -90,7 +69,7 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
         btnIniciar.setText("Iniciar");
         btnIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIniciarActionPerformed(evt);
+                btnIniciarActionPerformed();
             }
         });
 
@@ -228,7 +207,7 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
+    private void btnIniciarActionPerformed() {//GEN-FIRST:event_btnIniciarActionPerformed
 
         numHilos = (int) spinner1.getValue();
 
@@ -255,9 +234,8 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
     }
 
     /**
-     * @param args the command line arguments
      */
-    public static void lanzador(String args[]) {
+    public static void lanzador() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -270,13 +248,7 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmCarrera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmCarrera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmCarrera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | UnsupportedLookAndFeelException | IllegalAccessException | InstantiationException ex) {
             java.util.logging.Logger.getLogger(FrmCarrera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
