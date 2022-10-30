@@ -24,17 +24,11 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnIniciar = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        numLabel = new javax.swing.JLabel();
         SpinnerNumberModel model1 = new SpinnerNumberModel(1, 1, 8, 1);
         spinner1 = new javax.swing.JSpinner(model1);
 
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
 
 
         numLabel.setText("Nº de caballos: (1-8)");
@@ -220,6 +214,46 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
 
         this.btnIniciar.setEnabled(false);
         this.lblGanador.setText("");
+        jLabel2.setVisible(true);
+        pg2.setVisible(true);
+        jLabel3.setVisible(true);
+        pg3.setVisible(true);
+        jLabel4.setVisible(true);
+        pg4.setVisible(true);
+        jLabel5.setVisible(true);
+        pg5.setVisible(true);
+        jLabel6.setVisible(true);
+        pg6.setVisible(true);
+        jLabel7.setVisible(true);
+        pg7.setVisible(true);
+        jLabel8.setVisible(true);
+        pg8.setVisible(true);
+
+        switch (numHilos) {
+            case 1:
+                jLabel2.setVisible(false);
+                pg2.setVisible(false);
+            case 2:
+                jLabel3.setVisible(false);
+                pg3.setVisible(false);
+            case 3:
+                jLabel4.setVisible(false);
+                pg4.setVisible(false);
+            case 4:
+                jLabel5.setVisible(false);
+                pg5.setVisible(false);
+            case 5:
+                jLabel6.setVisible(false);
+                pg6.setVisible(false);
+            case 6:
+                jLabel7.setVisible(false);
+                pg7.setVisible(false);
+            case 7:
+                jLabel8.setVisible(false);
+                pg8.setVisible(false);
+
+
+        }
 
         for (int i = 0; i < numHilos; i++) {
             Caballo c = new Caballo((i + 1) + "");
@@ -240,6 +274,7 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
     }
 
     /**
+     *
      */
     public static void lanzador() {
         /* Set the Nimbus look and feel */
@@ -339,7 +374,6 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
 
 
     }
-
 
 
 }
