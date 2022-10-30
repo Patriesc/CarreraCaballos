@@ -1,6 +1,7 @@
 package com.carrera.carreraCaballos.modelos;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -45,7 +46,8 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
         lblGanador = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         numLabel = new javax.swing.JLabel();
-        spinner1 = new javax.swing.JSpinner();
+        SpinnerNumberModel model1 = new SpinnerNumberModel(1, 1, 8, 1);
+        spinner1 = new javax.swing.JSpinner(model1);
 
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,7 +55,6 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
 
 
         numLabel.setText("Nº de caballos: (1-8)");
-
 
         pg1.setStringPainted(true);
 
@@ -360,6 +361,8 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
 
 
     }
+
+
 
 }
 
