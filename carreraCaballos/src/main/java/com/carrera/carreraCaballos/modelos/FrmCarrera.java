@@ -7,11 +7,13 @@ import java.util.Observer;
 public class FrmCarrera extends javax.swing.JFrame implements Observer {
 
     private Thread[] hilos;
+    // Inicializamos por defecto a 8, en caso de que el usuario no introduzca ningún número
+    private int numHilos = 8;
 
 
     public FrmCarrera() {
         initComponents();
-        hilos = new Thread[8];
+        hilos = new Thread[numHilos];
     }
 
     /**
@@ -31,7 +33,8 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
         pg4 = new javax.swing.JProgressBar();
         jLabel4 = new javax.swing.JLabel();
         btnIniciar = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel(); jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         pg5 = new javax.swing.JProgressBar();
         jLabel6 = new javax.swing.JLabel();
         pg6 = new javax.swing.JProgressBar();
@@ -41,11 +44,16 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
         pg8 = new javax.swing.JProgressBar();
         lblGanador = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        numCaballos = new javax.swing.JTextArea();
+        numLabel = new javax.swing.JLabel();
         spinner1 = new javax.swing.JSpinner();
 
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+
+
+        numLabel.setText("Nº de caballos: (1-8)");
+
 
         pg1.setStringPainted(true);
 
@@ -89,7 +97,7 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
-            int pref = 533;
+        int pref = 533;
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -131,9 +139,9 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
                                                                 .addComponent(pg8, javax.swing.GroupLayout.PREFERRED_SIZE, pref, javax.swing.GroupLayout.PREFERRED_SIZE))
 
                                                         .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(numLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addComponent(spinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(numCaballos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(btnIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                .addComponent(btnIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)))
 
                                         )
 
@@ -204,7 +212,7 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(spinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(numCaballos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(numLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btnIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
 
                                 )
@@ -221,8 +229,7 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
 
-     //   int numHilos = Integer.parseInt(numCaballos.getText());
-        int numHilos = (int)spinner1.getValue();
+        numHilos = (int) spinner1.getValue();
 
 
         this.btnIniciar.setEnabled(false);
@@ -240,7 +247,7 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
 
     private void terminar() {
 
-        for (int i = 0; i < hilos.length; i++) {
+        for (int i = 0; i < numHilos; i++) {
             hilos[i].interrupt();
         }
 
@@ -249,7 +256,7 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void lanzador(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -301,7 +308,7 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
     private JProgressBar pg8;
     private JLabel jLabel8;
     private JLabel jLabel9;
-    private JTextArea numCaballos;
+    private JLabel numLabel;
     private JSpinner spinner1;
     // End of variables declaration//GEN-END:variables
 

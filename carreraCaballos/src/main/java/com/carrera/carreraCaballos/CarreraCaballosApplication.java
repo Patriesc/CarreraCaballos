@@ -1,13 +1,14 @@
 package com.carrera.carreraCaballos;
 
-import org.springframework.boot.SpringApplication;
+import com.carrera.carreraCaballos.modelos.FrmCarrera;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class CarreraCaballosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CarreraCaballosApplication.class, args);
+		FrmCarrera.lanzador(args);
 	}
 
 }
