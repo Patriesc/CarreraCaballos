@@ -6,7 +6,7 @@ import java.util.Observer;
 
 public class FrmCarrera extends javax.swing.JFrame implements Observer {
 
-    private final Thread[] hilos;
+    private Thread[] hilos;
     // Inicializamos por defecto a 8, en caso de que el usuario no introduzca ningún número
     private int numHilos = 8;
 
@@ -24,7 +24,11 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-
+        btnIniciar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        numLabel = new javax.swing.JLabel();
         SpinnerNumberModel model1 = new SpinnerNumberModel(1, 1, 8, 1);
         spinner1 = new javax.swing.JSpinner(model1);
 
@@ -65,6 +69,8 @@ public class FrmCarrera extends javax.swing.JFrame implements Observer {
         pg8.setStringPainted(true);
 
         jLabel8.setText("Caballo 8");
+
+        lblGanador.setText("");
 
         btnIniciar.setText("Iniciar");
         btnIniciar.addActionListener(new java.awt.event.ActionListener() {
